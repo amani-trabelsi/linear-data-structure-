@@ -1,0 +1,74 @@
+ALGORITHM set 
+VAR
+    tab1,tab2:table of integer[10];
+    s:integer:=0;
+    i,j:integer:=0;
+    test:BOOLEAN:=false;
+    htab : HASH_TABLE<INTEGER,INTEGER>;
+
+BEGIN
+
+FOR i FROM 0 TO set1.length STEP 1  DO
+    REPEAT
+    IF (tab1[i]<>tab2[j]) THEN
+        test:=false;
+    ELSE
+        test:=true;
+    END_IF
+    j++;
+
+    UNTIL (j=tab2.length OR test=true )
+    IF ( j=tab2.length) THEN
+
+        write("distinct elements are :",tab1[i]);
+
+    END_IF
+
+    END_FOR
+END_FOR
+write(sd);
+
+FOR i FROM 0 TO tab1.length STEP 1  DO
+    FOR j FROM 0 TO set2.length STEP 1  DO
+
+      IF (tab1[i]==tab2[j]) THEN
+       sc:= sc+tab1[i] +tab2[j];
+
+     END_IF
+     
+    END_FOR
+END_FOR
+write(sc);
+
+  htab : HASH_TABLE<INTEGER,INTEGER>;
+  FOR i FROM 0 TO tab1.length STEP 1  DO
+         htab.insert(i,tab1[i])
+
+  END_FOR
+   Write(htab);
+
+
+
+
+   int NumberofElementsInIntersection(int a[], int b[], int n, int m) {
+        unordered_set<int> s;
+        int count = 0;
+        for(int i = 0; i < n; i++)
+            s.insert(a[i]);
+        for(int j = 0; j < m; j++) {
+            auto element = s.find(b[j]);
+            if(element != s.end()) {
+                count++;
+                s.erase(b[j]);
+            }
+        }
+        return count;
+    }
+
+  
+   
+      
+
+
+
+END
